@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-
-const DbLink = 'mongodb+srv://balajipatil2003:balajipatil20033@cluster0.fcrhl1j.mongodb.net/?retryWrites=true&w=majority'
+require('dotenv').config();
+const DbLink = process.env.DB
 
 
 mongoose.connect(DbLink,{

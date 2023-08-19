@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const port = process.env.PORT || 3000; 
 const resister_logRoute = require('./Routers/resister');
 const productsRoute = require('./Routers/products');
 const cartRoute = require("./Routers/cart")
@@ -22,7 +22,7 @@ app.use('/category', categoryRoute)
 app.get('/',(req, res)=>{
     res.send("<h4>home page</h4><h4>category: path:/category/:catagary | (method: get) | {we has now only two categories 1.toys, 2.electric }</h4><h4>Products: (method: get)  |  path: /products </h4><h4>orders: (method: get) path: /orders/:idToken >>to addOrder (method: post) | path: /order/:idToken  | {body: raw: {product: (product id)}}</h4><h4>cart: (method: get) | path: /cart/:idToken |>>to addtocart (method: post) | path: /cart/:idToken  | {body: raw: {product: (product id)}}</h4><br><h4>LOGIN path: /login {body: raw: email: email, password: password}</h4> <h4> RESISTER: path: /resister {body: raw: email: email, password: password} method: post");
 })
-app.listen('3000',()=>{
+app.listen(port,()=>{
     // res.send("jay shree ram")
     console.log("connected")
 })
