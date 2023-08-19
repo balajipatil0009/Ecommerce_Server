@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const DbLink = process.env.DB
+const DbLink = process.env.DB;
 
 
 mongoose.connect(DbLink,{
